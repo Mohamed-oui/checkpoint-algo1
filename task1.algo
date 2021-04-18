@@ -1,0 +1,32 @@
+ALGORITHM task1
+VAR
+    phrase:STRING;
+    count_char:INTEGER:=1;
+    count_vow:INTEGER;
+    count_word:INTEGER:=1;
+    count_esp:INTEGER;
+
+    i:INTEGER;
+BEGIN
+    i=0;
+
+    FOR i FROM 0 TO phrase.lenght-2 STEP 1  DO
+        
+            IF (phrase[i] == " ") THEN
+                count_esp:=count_esp+1;
+                count_word:=count_esp+1;
+            ELSE
+                count_char:=count_char+1
+            END_IF
+        IF (phrase[i] in ["a","A","u","U","i","I","o","O","Y","y","e","E"]) THEN
+            count_vow:=count_vow+1
+        END_IF
+
+    END_FOR
+
+    
+    Write("The number of characters are ",count_char)
+    Write("The number of vowels are ",count_vow)
+    Write("The number of word are ",count_word)
+ 
+END
